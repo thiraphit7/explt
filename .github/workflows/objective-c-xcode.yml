@@ -39,7 +39,7 @@ jobs:
         if [ -f *.xcworkspace ]; then
           WORKSPACE=$(ls *.xcworkspace | head -n1)
           xcodebuild -workspace "$WORKSPACE" \
-                     -scheme "YourAppScheme" \
+                     -scheme "explt" \
                      -configuration Release \
                      -destination generic/platform=iOS \
                      -archivePath build/App.xcarchive \
@@ -47,7 +47,7 @@ jobs:
         else
           PROJECT=$(ls *.xcodeproj | head -n1)
           xcodebuild -project "$PROJECT" \
-                     -scheme "YourAppScheme" \
+                     -scheme "explt" \
                      -configuration Release \
                      -destination generic/platform=iOS \
                      -archivePath build/App.xcarchive \
