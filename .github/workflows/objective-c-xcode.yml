@@ -36,7 +36,7 @@ jobs:
     - name: Build and Archive
       run: |
         # Find the .xcworkspace or .xcodeproj file
-        if [ -f *.xcworkspace ]; then
+        if ls *.xcworkspace 1> /dev/null 2>&1; then
           WORKSPACE=$(ls *.xcworkspace | head -n1)
           xcodebuild -workspace "$WORKSPACE" \
                      -scheme "explt" \
@@ -44,7 +44,7 @@ jobs:
                      -destination generic/platform=iOS \
                      -archivePath build/App.xcarchive \
                      archive
-        else
+        elif ls *.xcodeproj 1> /dev/null 2>&1; then
           PROJECT=$(ls *.xcodeproj | head -n1)
           xcodebuild -project "$PROJECT" \
                      -scheme "explt" \
@@ -52,6 +52,9 @@ jobs:
                      -destination generic/platform=iOS \
                      -archivePath build/App.xcarchive \
                      archive
+        else
+          echo "No .xcworkspace or .xcodeproj file found!"
+          exit 1
         fi
         
     - name: Export IPA
