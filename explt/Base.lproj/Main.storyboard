@@ -19,7 +19,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8d-Ae-0yc">
                                 <rect key="frame" x="118" y="398" width="156" height="57"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="2000" id="lsD-cy-JIp"/>
+                                    <constraint firstAttribute="width" constant="200" id="lsD-cy-JIp"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="exploit"/>
