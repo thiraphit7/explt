@@ -35,7 +35,7 @@ jobs:
         
     - name: Build
       run: |
-       xcodebuild -project explt.xcodeproj -scheme explt -configuration Release -destination 'platform=iOS,name=iPhone,arch=arm64' -archivePath build/App.xcarchive archive CODE_SIGNING_ALLOWED=NO
+       xcodebuild -project explt.xcodeproj -scheme explt -configuration Release -destination 'platform=iOS,name=j,id=00008140-0004293C0C88801C' -archivePath build/App.xcarchive archive CODE_SIGNING_ALLOWED=NO
     
     - name: Export IPA
       run: |
